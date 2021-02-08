@@ -31,7 +31,6 @@ jobs:
       - JDK='GraalVM 20.3.0 (11)'
       arch: arm64
       install: . ./install-jdk.sh --url "https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.3.0/graalvm-ce-java11-linux-aarch64-20.3.0.tar.gz"
-  - ./mvnw clean verify
 
 after_success:
 - '[[ "${SKIP_JACOCO}" = "false" ]] && bash <(curl -s https://codecov.io/bash) || true'
